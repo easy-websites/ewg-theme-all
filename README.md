@@ -29,7 +29,7 @@ mkdir my-workspace
 
 cd my-workspace
 
-ewg init --theme simple
+ewg init --theme all
 
 npm install -g coffee-script
 npm install -g bower
