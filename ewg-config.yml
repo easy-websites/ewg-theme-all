@@ -20,12 +20,14 @@ development: &default
 
   paths:
     src:
+      base:       './src'
       images:     'assets/images'
       scripts:    'assets/scripts'
       styles:     'assets/styles'
       public:     'assets/public'
       views:      'views'
     dist:
+      base:       './dist'
       images:     'images'
       scripts:    'scripts'
       styles:     'styles'
