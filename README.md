@@ -35,10 +35,10 @@ npm install -g coffee-script
 npm install -g bower
 npm install --cached
 
-gulp serve
+ewg serve
 
 ```
-After running ``gulp serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
+After running ``ewg serve`` the ewg will compile the html pages and opens a browser. On every source change the browser will reload.
 
 ### Ressources
 > "[Easy-Website-Generator](https://github.com/easy-website-generator/)"
