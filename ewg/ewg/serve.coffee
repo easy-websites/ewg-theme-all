@@ -2,11 +2,17 @@ browserSync = require('browser-sync').create()
 ws          = require 'easy-website-generator'
 gulp        = require 'gulp'
 
-gulp.task 'watch-generator', ['generate'], (cb)=>
-  browserSync.reload()
-  cb()
-
-# TODO watch for source code changes and restart serve
-gulp.task 'serve', ['generate'], (cb) =>
+gulp.task 'browsersyncInit', gulp.series (done)->
   browserSync.init ws.config.server
-  gulp.watch 'src/**/*', ['watch-generator'], cb
+  done()
+
+gulp.task 'watchGenerator', =>
+  gulp.watch 'src/**/*', gulp.series('generate', (done) =>
+                                                    browserSync.reload()
+                                                    done()
+                                                  )
+
+
+gulp.task(
+  'serve', gulp.series('generate', gulp.parallel('browsersyncInit', 'watchGenerator'))
+);

@@ -10,6 +10,12 @@ console.log ' -----------------------------------'.green
 console.log " | starting Easy-Website-Generator (#{stage.current().red})".green
 console.log ' -----------------------------------'.green
 
-require('require-dir')("./ewg", recurse: true)
+require('require-dir')("./ewg/basic", recurse: true)
+require('require-dir')("./ewg/compile", recurse: true)
+require('require-dir')("./ewg/minimize", recurse: true)
+require('require-dir')("./ewg/services", recurse: true)
 
-gulp.task('default', ['serve'])
+# have to be last, gulp 4 depends on order
+require('require-dir')("./ewg/ewg", recurse: true)
+
+gulp.task('default', gulp.series('serve'))
