@@ -21,3 +21,10 @@ gulp.task 'generate', (cb) ->
                 'services-analytics:generate'
               ],
               cb)
+
+gulp.task 'generate-and-exit', ->
+  runSequence(
+              'generate'
+              ->
+                process.exit(0)
+              )
