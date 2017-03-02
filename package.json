@@ -11,7 +11,7 @@
     "browser-sync": "^2.13.0",
     "colors": "^1.1.2",
     "del": "^2.2.1",
-    "easy-website-generator": "0.0.15",
+    "easy-website-generator": "^1.0.1",
     "ewg-config": "*",
     "ewg-haml-coffee-gulp": "^1.0.11",
     "gulp": "*",
